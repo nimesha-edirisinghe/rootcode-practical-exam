@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import './VehicleCard.css';
 import Button from 'components/Button/Button';
 import Input from 'components/Input/Input';
@@ -8,6 +8,7 @@ interface VehicleCardProps {
   image: string;
   manufactureYear: string;
   description: string;
+  submitHandler: (image: string, name: string, amount: string) => void;
 }
 
 const VehicleCard: FC<VehicleCardProps> = ({
@@ -15,7 +16,9 @@ const VehicleCard: FC<VehicleCardProps> = ({
   image,
   manufactureYear,
   description,
+  submitHandler,
 }) => {
+  const [amount, setAmount] = useState<string>('');
   return (
     <main className="card">
       <div className="image">
@@ -30,10 +33,18 @@ const VehicleCard: FC<VehicleCardProps> = ({
         <p>{description}</p>
       </div>
       <div className="bid">
-        <Input label="Email" type="email" placeholder="amount" />
+        <Input
+          label="Email"
+          type="email"
+          placeholder="amount"
+          onChange={(event) => setAmount(event.target.value)}
+        />
       </div>
       <div className="btn">
-        <Button variant="primary" onClick={() => console.log('Hi')}>
+        <Button
+          variant="primary"
+          onClick={() => submitHandler(image, name, amount)}
+        >
           Submit
         </Button>
       </div>

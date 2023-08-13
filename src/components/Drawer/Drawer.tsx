@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { XCircle } from 'react-feather';
 
 import './Drawer.css';
 
@@ -12,8 +13,8 @@ const Drawer: FC<DrawerProps> = ({ isOpen, onClose, children }) => {
   return (
     <div className={`drawer ${isOpen ? 'open' : ''}`}>
       <div className="drawer-content">
-        <div className="close-button" onClick={onClose}>
-          X
+        <div className="close-button">
+          <XCircle onClick={onClose} size={18} />
         </div>
         {children}
       </div>

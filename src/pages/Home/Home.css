@@ -30,8 +30,22 @@
 }
 
 .grid-item {
-  background-color: #3498db;
   color: white;
   padding: 10px;
   text-align: center;
+}
+
+.drawer-body {
+  height: 85vh;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.drawer-title {
+  text-align: center;
+}
+
+.drawer-footer {
+  height: 20px;
+  width: 100%;
 }

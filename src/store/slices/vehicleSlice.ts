@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { IRootSlice } from 'store/rootState';
 import { VehicleI } from 'types/response/vehicle';
+import { VehicleBidedItemsI } from 'types/vehicle';
 
 export interface IVehicle {
   vehicleData: VehicleI[];
@@ -9,6 +10,7 @@ export interface IVehicle {
   localScope: {
     drawer: boolean;
   };
+  bidItems: VehicleBidedItemsI[];
 }
 
 export const VehicleSlice = createSlice({
@@ -20,6 +22,7 @@ export const VehicleSlice = createSlice({
     localScope: {
       drawer: false,
     },
+    bidItems: [],
   } as IVehicle,
   reducers: {
     getVehiclesRequest: {
@@ -52,6 +55,16 @@ export const VehicleSlice = createSlice({
     drawerCloseAction: (state) => {
       state.localScope.drawer = false;
     },
+    bidItemAction: (
+      state,
+      action: PayloadAction<{
+        image: string;
+        name: string;
+        amount: string;
+      }>
+    ) => {
+      state.bidItems.push(action.payload);
+    },
   },
 });
 
@@ -63,6 +76,7 @@ export const {
   getVehiclesFailure,
   drawerOpenAction,
   drawerCloseAction,
+  bidItemAction,
 } = VehicleSlice.actions;
 
 export default VehicleSlice.reducer;
