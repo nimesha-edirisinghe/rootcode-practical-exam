@@ -1,0 +1,19 @@
+.select-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.select-label {
+  margin-bottom: 8px;
+  font-size: 16px;
+  color: #333;
+}
+
+.select-field {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 100%;
+}

@@ -1,0 +1,38 @@
+.container {
+  padding-top: 50px;
+  padding-left: 60px;
+  padding-right: 60px;
+  height: auto;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.filter {
+  height: 100px;
+  width: 300px;
+}
+
+.cart {
+  height: 100px;
+  width: 100px;
+  background-color: red;
+}
+
+.body {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.grid-item {
+  background-color: #3498db;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
